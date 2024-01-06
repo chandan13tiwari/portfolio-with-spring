@@ -1,7 +1,7 @@
 package com.poc.portfolio.img.social;
 
 import com.poc.portfolio.img.ImgTagAttributes;
-import lombok.*;
+import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
 @Data

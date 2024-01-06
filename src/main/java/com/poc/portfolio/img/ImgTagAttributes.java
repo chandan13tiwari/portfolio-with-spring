@@ -1,6 +1,5 @@
 package com.poc.portfolio.img;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
