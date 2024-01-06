@@ -22,6 +22,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @Slf4j
@@ -32,7 +36,8 @@ public class PortfolioController {
     private static final String RESUME_MEDIA_TYPE = "application/pdf";
 
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("titles", getTitles());
         return "index";
     }
 
@@ -47,6 +52,15 @@ public class PortfolioController {
                 .contentLength(file.length())
                 .contentType(MediaType.parseMediaType(RESUME_MEDIA_TYPE))
                 .body(resource);
+    }
+
+    private static List<String> getTitles() {
+        List<String> listOfTitles = new ArrayList<>();
+        listOfTitles.add("Software Development Engineer");
+        listOfTitles.add("Content Creator");
+        listOfTitles.add("Music Producer");
+
+        return listOfTitles;
     }
 
 }

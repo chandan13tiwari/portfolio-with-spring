@@ -46,12 +46,9 @@
 
         <div class="animated-text">
             <ul class="sec-texts">
-                <li><span>Software Development Engineer</span></li>
-                <li><span>Content Creator</span></li>
-                <li><span>Music Producer</span></li>
+                <li th:each="title : ${titles}"><span th:utext="${title}">Title</span></li>
             </ul>
         </div>
-
 
 
         <div class="btn-container">
