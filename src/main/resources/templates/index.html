@@ -55,12 +55,15 @@
 
 
         <div class="btn-container">
-            <button
-                    class="btn btn-color-2"
-                    onclick="window.open('./file/chandan-resume.pdf')"
-            >
-                Download CV
-            </button>
+            <a
+                    th:href="@{http://localhost:8080/download}">
+                <button
+                        class="btn btn-color-2"
+
+                >
+                    Download CV
+                </button>
+            </a>
             <button class="btn btn-color-1" onclick="location.href='./#contact'">
                 Contact Info
             </button>
