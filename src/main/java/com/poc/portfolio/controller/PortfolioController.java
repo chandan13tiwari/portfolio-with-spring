@@ -30,41 +30,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.poc.portfolio.utils.Constants.*;
+
 @Controller
 @Slf4j
 public class PortfolioController {
-
-    private static final String RESUME_FILENAME = "chandan-resume.pdf";
-    private static final String RESUME_FILE_PATH = "src/main/resources/static/file/chandan-resume.pdf";
-    private static final String RESUME_MEDIA_TYPE = "application/pdf";
-    private static final String YOUTUBE_ASSET_URL = "/assets/youtube.png";
-    private static final String LINKEDIN_ASSET_URL = "/assets/linkedin.png";
-    private static final String GITHUB_ASSET_URL = "/assets/github.png";
-    private static final String LEETCODE_ASSET_URL = "/assets/leetcode.png";
-    private static final String YOUTUBE_URL = "https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA";
-    private static final String LINKEDIN_URL = "https://www.linkedin.com/in/chandan-tiwari-uk/";
-    private static final String GITHUB_URL = "https://github.com/chandan13tiwari";
-    private static final String LEETCODE_URL = "https://leetcode.com/chantiwa/";
-    private static final String LIBRBARY_ASSET_URL = "/assets/librbary.png";
-    private static final String SECURE_FILE_UPLOAD_ASSET_URL = "/assets/secure-file-upload-project.jpeg";
-    private static final String GEHU_ONLINE_ASSET_URL = "/assets/gehu-online.png";
-    private static final String LIBRBARY = "Librbary";
-    private static final String SECURE_FILE_UPLOAD = "Secure File Upload";
-    private static final String GEHU_ONLINE = "GEHU Online";
-    private static final String LIBRBARY_GITHUB_URL = "https://github.com/librbary";
-    private static final String LIBRBARY_LIVE_DEMO_URL = "https://librbary.github.io/librbary-buy-feature/";
-    private static final String SECURE_FILE_UPLOAD_GITHUB_URL = "https://github.com/chandan13tiwari/secure-file-upload";
-    private static final String SECURE_FILE_UPLOAD_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/secure-file-upload";
-    private static final String GEHU_ONLINE_GITHUB_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
-    private static final String GEHU_ONLINE_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
-    private static final String PROFILE_PIC_ASSET_URL = "/assets/profile-pic.png";
-    private static final String ABOUT_PIC_ASSET_URL = "/assets/about-pic.png";
-    private static final String EXPERIENCE_ASSET_URL = "/assets/experience.png";
-    private static final String EDUCATION_ASSET_URL = "/assets/education.png";
-    private static final String ARROW_ASSET_URL = "/assets/arrow.png";
-    private static final String CHECKMARK_ASSET_URL = "/assets/checkmark.png";
-
-
 
     @GetMapping("/")
     public String home(Model model) {
