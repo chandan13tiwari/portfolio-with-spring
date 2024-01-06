@@ -26,22 +26,22 @@ import static com.poc.portfolio.utils.Constants.*;
 public class PortfolioController {
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String portfolio(Model model) {
         model.addAttribute("titles", getTitles());
-        model.addAttribute("social", getSocialMediaImgTag());
-        model.addAttribute("projects", getProjectImgTag());
+        model.addAttribute("social", getSocialMediaImgTagAttributes());
+        model.addAttribute("projects", getProjectImgTagAttributes());
         model.addAttribute("profilepic", PROFILE_PIC_ASSET_URL);
         model.addAttribute("aboutpic", ABOUT_PIC_ASSET_URL);
         model.addAttribute("experience", EXPERIENCE_ASSET_URL);
         model.addAttribute("education", EDUCATION_ASSET_URL);
-        model.addAttribute("arrow", getArrowImgTag());
+        model.addAttribute("arrow", getArrowImgTagAttributes());
         model.addAttribute("checkmark", CHECKMARK_ASSET_URL);
 
         return "index";
     }
 
     @GetMapping(path = "/download")
-    public ResponseEntity<Resource> download() throws IOException {
+    public ResponseEntity<Resource> downloadResume() throws IOException {
         File file = new File(RESUME_FILE_PATH);
         Path path = Paths.get(file.getAbsolutePath());
         ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(path));
@@ -62,7 +62,7 @@ public class PortfolioController {
         return listOfTitles;
     }
 
-    private static List<SocialMediaImgTag> getSocialMediaImgTag() {
+    private static List<SocialMediaImgTag> getSocialMediaImgTagAttributes() {
         List<SocialMediaImgTag> imgTagList = new ArrayList<>();
 
         imgTagList.add(SocialMediaImgTag.builder()
@@ -77,7 +77,7 @@ public class PortfolioController {
         return imgTagList;
     }
 
-    private static List<ProjectImgTag> getProjectImgTag() {
+    private static List<ProjectImgTag> getProjectImgTagAttributes() {
         List<ProjectImgTag> imgTagList = new ArrayList<>();
 
         imgTagList.add(ProjectImgTag.builder()
@@ -98,7 +98,7 @@ public class PortfolioController {
         return imgTagList;
     }
 
-    private static ArrowImgTag getArrowImgTag() {
+    private static ArrowImgTag getArrowImgTagAttributes() {
         return ArrowImgTag.builder()
                 .assetUrl(ARROW_ASSET_URL)
                 .altName("Arrow icon")
