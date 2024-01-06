@@ -1,5 +1,6 @@
 package com.poc.portfolio.controller;
 
+import com.poc.portfolio.img.social.SocialMediaImgTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.ClassPathResource;
@@ -34,10 +35,21 @@ public class PortfolioController {
     private static final String RESUME_FILENAME = "chandan-resume.pdf";
     private static final String RESUME_FILE_PATH = "src/main/resources/static/file/chandan-resume.pdf";
     private static final String RESUME_MEDIA_TYPE = "application/pdf";
+    private static final String YOUTUBE_ASSET_URL = "/assets/youtube.png";
+    private static final String LINKEDIN_ASSET_URL = "/assets/linkedin.png";
+    private static final String GITHUB_ASSET_URL = "/assets/github.png";
+    private static final String LEETCODE_ASSET_URL = "/assets/leetcode.png";
+    private static final String YOUTUBE_URL = "https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA";
+    private static final String LINKEDIN_URL = "https://www.linkedin.com/in/chandan-tiwari-uk/";
+    private static final String GITHUB_URL = "https://github.com/chandan13tiwari";
+    private static final String LEETCODE_URL = "https://leetcode.com/chantiwa/";
+
+
 
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("titles", getTitles());
+        model.addAttribute("social", getSocialMediaImgTag());
         return "index";
     }
 
@@ -61,6 +73,20 @@ public class PortfolioController {
         listOfTitles.add("Music Producer");
 
         return listOfTitles;
+    }
+
+    private static List<SocialMediaImgTag> getSocialMediaImgTag() {
+        List<SocialMediaImgTag> imgTagList = new ArrayList<>();
+        imgTagList.add(SocialMediaImgTag.builder()
+                .assetUrl(YOUTUBE_ASSET_URL).altName("My YouTube profile").onClickAction(YOUTUBE_URL).build());
+        imgTagList.add(SocialMediaImgTag.builder()
+                .assetUrl(LINKEDIN_ASSET_URL).altName("My LinkedIn profile").onClickAction(LINKEDIN_URL).build());
+        imgTagList.add(SocialMediaImgTag.builder()
+                .assetUrl(GITHUB_ASSET_URL).altName("My Github profile").onClickAction(GITHUB_URL).build());
+        imgTagList.add(SocialMediaImgTag.builder()
+                .assetUrl(LEETCODE_ASSET_URL).altName("My Leetcode profile").onClickAction(LEETCODE_URL).build());
+
+        return imgTagList;
     }
 
 }

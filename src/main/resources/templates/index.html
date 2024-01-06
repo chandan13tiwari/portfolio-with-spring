@@ -62,30 +62,13 @@
             </button>
         </div>
         <div id="socials-container">
-            <img
-                    th:src="@{/assets/youtube.png}"
-                    alt="My YouTube profile"
-                    class="icon"
-                    th:onclick="window.open('https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA', '_blank')"
-            />
-            <img
-                    th:src="@{/assets/linkedin.png}"
-                    alt="My LinkedIn profile"
-                    class="icon"
-                    th:onclick="window.open('https://www.linkedin.com/in/chandan-tiwari-uk/', '_blank')"
-            />
-            <img
-                    th:src="@{/assets/github.png}"
-                    alt="My Github profile"
-                    class="icon"
-                    th:onclick="window.open('https://github.com/chandan13tiwari', '_blank')"
-            />
-            <img
-                    th:src="@{/assets/leetcode.png}"
-                    alt="My Leetcode profile"
-                    class="icon"
-                    th:onclick="window.open('https://leetcode.com/chantiwa/', '_blank')"
-            />
+            <a th:each="media : ${social}" th:href="@{${media.onClickAction}}" th:target="_blank">
+                <img
+                        th:src="@{${media.assetUrl}}"
+                        th:alt="${media.altName}"
+                        class="icon"
+                />
+            </a>
         </div>
     </div>
 </section>
