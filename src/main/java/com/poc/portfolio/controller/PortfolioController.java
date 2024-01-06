@@ -56,6 +56,7 @@ public class PortfolioController {
     private static final String SECURE_FILE_UPLOAD_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/secure-file-upload";
     private static final String GEHU_ONLINE_GITHUB_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
     private static final String GEHU_ONLINE_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
+    private static final String PROFILE_PIC_ASSET_URL = "/assets/profile-pic.png";
 
 
 
@@ -64,6 +65,7 @@ public class PortfolioController {
         model.addAttribute("titles", getTitles());
         model.addAttribute("social", getSocialMediaImgTag());
         model.addAttribute("projects", getProjectImgTag());
+        model.addAttribute("profilepic", PROFILE_PIC_ASSET_URL);
 
         return "index";
     }
