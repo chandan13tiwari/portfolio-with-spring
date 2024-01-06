@@ -62,6 +62,7 @@ public class PortfolioController {
     private static final String EXPERIENCE_ASSET_URL = "/assets/experience.png";
     private static final String EDUCATION_ASSET_URL = "/assets/education.png";
     private static final String ARROW_ASSET_URL = "/assets/arrow.png";
+    private static final String CHECKMARK_ASSET_URL = "/assets/checkmark.png";
 
 
 
@@ -75,6 +76,7 @@ public class PortfolioController {
         model.addAttribute("experience", EXPERIENCE_ASSET_URL);
         model.addAttribute("education", EDUCATION_ASSET_URL);
         model.addAttribute("arrow", getArrowImgTag());
+        model.addAttribute("checkmark", CHECKMARK_ASSET_URL);
 
         return "index";
     }
