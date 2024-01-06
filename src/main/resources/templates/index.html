@@ -38,7 +38,7 @@
 </nav>
 <section id="profile">
     <div class="section__pic-container">
-        <img th:src="@{${profilepic}}" th:alt="Chandan Tiwari" />
+        <img th:src="@{${profilepic}}" alt="Chandan Tiwari" />
     </div>
     <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
@@ -79,8 +79,8 @@
     <div class="section-container">
         <div class="section__pic-container">
             <img
-                    th:src="@{/assets/about-pic.png}"
-                    alt="Profile picture"
+                    th:src="@{${aboutpic}}"
+                    alt="Chandan Tiwari"
                     class="about-pic"
             />
         </div>
@@ -88,7 +88,7 @@
             <div class="about-containers">
                 <div class="details-container">
                     <img
-                            th:src="@{/assets/experience.png}"
+                            th:src="@{${experience}}"
                             alt="Experience icon"
                             class="icon"
                     />
@@ -122,12 +122,13 @@
         </div>
     </div>
     <img
-            th:src="@{/assets/arrow.png}"
-            alt="Arrow icon"
+            th:src="@{${arrow.assetUrl}}"
+            th:alt="${arrow.altName}"
             class="icon arrow"
             th:onclick="@{location.href='./#experience'}"
     />
 </section>
+
 <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Experience</h1>

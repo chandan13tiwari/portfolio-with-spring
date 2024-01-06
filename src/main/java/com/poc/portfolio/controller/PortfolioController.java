@@ -1,5 +1,6 @@
 package com.poc.portfolio.controller;
 
+import com.poc.portfolio.img.arrow.ArrowImgTag;
 import com.poc.portfolio.img.project.ProjectImgTag;
 import com.poc.portfolio.img.social.SocialMediaImgTag;
 import lombok.extern.slf4j.Slf4j;
@@ -57,6 +58,10 @@ public class PortfolioController {
     private static final String GEHU_ONLINE_GITHUB_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
     private static final String GEHU_ONLINE_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
     private static final String PROFILE_PIC_ASSET_URL = "/assets/profile-pic.png";
+    private static final String ABOUT_PIC_ASSET_URL = "/assets/about-pic.png";
+    private static final String EXPERIENCE_ASSET_URL = "/assets/experience.png";
+    private static final String EDUCATION_ASSET_URL = "/assets/education.png";
+    private static final String ARROW_ASSET_URL = "/assets/arrow.png";
 
 
 
@@ -66,6 +71,10 @@ public class PortfolioController {
         model.addAttribute("social", getSocialMediaImgTag());
         model.addAttribute("projects", getProjectImgTag());
         model.addAttribute("profilepic", PROFILE_PIC_ASSET_URL);
+        model.addAttribute("aboutpic", ABOUT_PIC_ASSET_URL);
+        model.addAttribute("experience", EXPERIENCE_ASSET_URL);
+        model.addAttribute("education", EDUCATION_ASSET_URL);
+        model.addAttribute("arrow", getArrowImgTag());
 
         return "index";
     }
@@ -126,6 +135,13 @@ public class PortfolioController {
                 .onLiveDemoClickAction(GEHU_ONLINE_LIVE_DEMO_URL).build());
 
         return imgTagList;
+    }
+
+    private static ArrowImgTag getArrowImgTag() {
+        return ArrowImgTag.builder()
+                .assetUrl(ARROW_ASSET_URL)
+                .altName("Arrow icon")
+                .build();
     }
 
 }
