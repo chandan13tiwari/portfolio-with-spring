@@ -13,26 +13,26 @@
     <div class="logo">Hello World!</div>
     <div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a th:href="@{#about}">About</a></li>
+            <li><a th:href="@{#experience}">Experience</a></li>
+            <li><a th:href="@{#projects}">Projects</a></li>
+            <li><a th:href="@{#contact}">Contact</a></li>
         </ul>
     </div>
 </nav>
 <nav id="hamburger-nav">
     <div class="logo">Hello World!</div>
     <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
+        <div class="hamburger-icon" th:onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a th:href="@{#about}" th:onclick="toggleMenu()">About</a></li>
+            <li><a th:href="@{#experience}" th:onclick="toggleMenu()">Experience</a></li>
+            <li><a th:href="@{#projects}" th:onclick="toggleMenu()">Projects</a></li>
+            <li><a th:href="@{#contact}" th:onclick="toggleMenu()">Contact</a></li>
         </div>
     </div>
 </nav>
@@ -55,43 +55,39 @@
 
 
         <div class="btn-container">
-            <a
-                    th:href="@{http://localhost:8080/download}">
-                <button
-                        class="btn btn-color-2"
-
-                >
+            <a th:href="@{/download}">
+                <button class="btn btn-color-2">
                     Download CV
                 </button>
             </a>
-            <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            <button class="btn btn-color-1" th:onclick="@{location.href='./#contact'}">
                 Contact Info
             </button>
         </div>
         <div id="socials-container">
             <img
-                    src="./assets/youtube.png"
+                    th:src="@{/assets/youtube.png}"
                     alt="My YouTube profile"
                     class="icon"
-                    onclick="window.open('https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA', '_blank')"
+                    th:onclick="window.open('https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA', '_blank')"
             />
             <img
-                    src="./assets/linkedin.png"
+                    th:src="@{/assets/linkedin.png}"
                     alt="My LinkedIn profile"
                     class="icon"
-                    onclick="window.open('https://www.linkedin.com/in/chandan-tiwari-uk/', '_blank')"
+                    th:onclick="window.open('https://www.linkedin.com/in/chandan-tiwari-uk/', '_blank')"
             />
             <img
-                    src="./assets/github.png"
+                    th:src="@{/assets/github.png}"
                     alt="My Github profile"
                     class="icon"
-                    onclick="window.open('https://github.com/chandan13tiwari', '_blank')"
+                    th:onclick="window.open('https://github.com/chandan13tiwari', '_blank')"
             />
             <img
-                    src="./assets/leetcode.png"
+                    th:src="@{/assets/leetcode.png}"
                     alt="My Leetcode profile"
                     class="icon"
-                    onclick="window.open('https://leetcode.com/chantiwa/', '_blank')"
+                    th:onclick="window.open('https://leetcode.com/chantiwa/', '_blank')"
             />
         </div>
     </div>
@@ -102,7 +98,7 @@
     <div class="section-container">
         <div class="section__pic-container">
             <img
-                    src="./assets/about-pic.png"
+                    th:src="@{/assets/about-pic.png}"
                     alt="Profile picture"
                     class="about-pic"
             />
@@ -111,7 +107,7 @@
             <div class="about-containers">
                 <div class="details-container">
                     <img
-                            src="./assets/experience.png"
+                            th:src="@{/assets/experience.png}"
                             alt="Experience icon"
                             class="icon"
                     />
@@ -120,7 +116,7 @@
                 </div>
                 <div class="details-container">
                     <img
-                            src="./assets/education.png"
+                            th:src="@{/assets/education.png}"
                             alt="Education icon"
                             class="icon"
                     />
@@ -145,10 +141,10 @@
         </div>
     </div>
     <img
-            src="./assets/arrow.png"
+            th:src="@{/assets/arrow.png}"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#experience'"
+            th:onclick="@{location.href='./#experience'}"
     />
 </section>
 <section id="experience">
@@ -161,7 +157,7 @@
                 <div class="article-container">
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -172,7 +168,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -183,7 +179,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -194,7 +190,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -205,7 +201,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -216,7 +212,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -232,7 +228,7 @@
                 <div class="article-container">
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -243,7 +239,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -254,7 +250,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -265,7 +261,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -284,7 +280,7 @@
                 <div class="article-container">
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -303,7 +299,7 @@
                 <div class="article-container">
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -314,7 +310,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -325,7 +321,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -341,7 +337,7 @@
                 <div class="article-container">
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -352,7 +348,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -363,7 +359,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -374,7 +370,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -385,7 +381,7 @@
                     </article>
                     <article>
                         <img
-                                src="./assets/checkmark.png"
+                                th:src="@{/assets/checkmark.png}"
                                 alt="Experience icon"
                                 class="icon"
                         />
@@ -399,10 +395,10 @@
         </div>
     </div>
     <img
-            src="./assets/arrow.png"
+            th:src="@{/assets/arrow.png}"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#projects'"
+            th:onclick="@{location.href='./#projects'}"
     />
 </section>
 <section id="projects">
@@ -413,7 +409,7 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img
-                            src="./assets/librbary.png"
+                            th:src="@{/assets/librbary.png}"
                             alt="Librbary"
                             class="project-img"
                     />
@@ -422,13 +418,13 @@
                 <div class="btn-container">
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/librbary', '_blank')"
+                            th:onclick="window.open('https://github.com/librbary', '_blank')"
                     >
                         Github
                     </button>
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://librbary.github.io/librbary-buy-feature/', '_blank')"
+                            th:onclick="window.open('https://librbary.github.io/librbary-buy-feature/', '_blank')"
                     >
                         Live Demo
                     </button>
@@ -437,7 +433,7 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img
-                            src="./assets/secure-file-upload-project.jpeg"
+                            th:src="@{/assets/secure-file-upload-project.jpeg}"
                             alt="Secure File Upload"
                             class="project-img"
                     />
@@ -446,13 +442,13 @@
                 <div class="btn-container">
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
+                            th:onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
                     >
                         Github
                     </button>
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
+                            th:onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
                     >
                         Live Demo
                     </button>
@@ -461,7 +457,7 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img
-                            src="./assets/gehu-online.png"
+                            th:src="@{/assets/gehu-online.png}"
                             alt="GEHU Online"
                             class="project-img"
                     />
@@ -470,13 +466,13 @@
                 <div class="btn-container">
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
+                            th:onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
                     >
                         Github
                     </button>
                     <button
                             class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
+                            th:onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
                     >
                         Live Demo
                     </button>
@@ -485,10 +481,10 @@
         </div>
     </div>
     <img
-            src="./assets/arrow.png"
+            th:src="@{/assets/arrow.png}"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#contact'"
+            th:onclick="@{location.href='./#contact'}"
     />
 </section>
 <section id="contact">
@@ -497,19 +493,19 @@
     <div class="contact-info-upper-container">
         <div class="contact-info-container">
             <img
-                    src="./assets/email.png"
+                    th:src="@{/assets/email.png}"
                     alt="Email icon"
                     class="icon contact-icon email-icon"
             />
-            <p><a href="mailto:chandan.tiwaris@outlook.com">chandan.tiwaris@outlook.com</a></p>
+            <p><a th:href="@{mailto:chandan.tiwaris@outlook.com}">chandan.tiwaris@outlook.com</a></p>
         </div>
         <div class="contact-info-container">
             <img
-                    src="./assets/linkedin.png"
+                    th:src="@{/assets/linkedin.png}"
                     alt="LinkedIn icon"
                     class="icon contact-icon"
             />
-            <p><a href="https://www.linkedin.com/in/chandan-tiwari-uk/">LinkedIn</a></p>
+            <p><a th:href="@{https://www.linkedin.com/in/chandan-tiwari-uk/}">LinkedIn</a></p>
         </div>
     </div>
 </section>
@@ -517,10 +513,10 @@
     <nav>
         <div class="nav-links-container">
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a th:href="@{#about}">About</a></li>
+                <li><a th:href="@{#experience}">Experience</a></li>
+                <li><a th:href="@{#projects}">Projects</a></li>
+                <li><a th:href="@{#contact}">Contact</a></li>
             </ul>
         </div>
     </nav>
