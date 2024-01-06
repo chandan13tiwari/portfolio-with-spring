@@ -377,12 +377,13 @@
         </div>
     </div>
     <img
-            th:src="@{/assets/arrow.png}"
-            alt="Arrow icon"
+            th:src="@{${arrow.assetUrl}}"
+            th:alt="${arrow.altName}"
             class="icon arrow"
             th:onclick="@{location.href='./#projects'}"
     />
 </section>
+
 <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
@@ -413,8 +414,8 @@
         </div>
     </div>
     <img
-            th:src="@{/assets/arrow.png}"
-            alt="Arrow icon"
+            th:src="@{${arrow.assetUrl}}"
+            th:alt="${arrow.altName}"
             class="icon arrow"
             th:onclick="@{location.href='./#contact'}"
     />
