@@ -72,6 +72,7 @@
         </div>
     </div>
 </section>
+
 <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -386,76 +387,26 @@
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
         <div class="about-containers">
-            <div class="details-container color-container">
+            <div class="details-container color-container" th:each="project : ${projects}">
                 <div class="article-container">
                     <img
-                            th:src="@{/assets/librbary.png}"
-                            alt="Librbary"
+                            th:src="@{${project.assetUrl}}"
+                            th:alt="${project.altName}"
                             class="project-img"
                     />
                 </div>
-                <h2 class="experience-sub-title project-title">Librbary</h2>
+                <h2 class="experience-sub-title project-title" th:text="${project.projectName}">ProjectName</h2>
                 <div class="btn-container">
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://github.com/librbary', '_blank')"
-                    >
-                        Github
-                    </button>
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://librbary.github.io/librbary-buy-feature/', '_blank')"
-                    >
-                        Live Demo
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img
-                            th:src="@{/assets/secure-file-upload-project.jpeg}"
-                            alt="Secure File Upload"
-                            class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Secure File Upload</h2>
-                <div class="btn-container">
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
-                    >
-                        Github
-                    </button>
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://github.com/chandan13tiwari/secure-file-upload', '_blank')"
-                    >
-                        Live Demo
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img
-                            th:src="@{/assets/gehu-online.png}"
-                            alt="GEHU Online"
-                            class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">GEHU Online</h2>
-                <div class="btn-container">
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
-                    >
-                        Github
-                    </button>
-                    <button
-                            class="btn btn-color-2 project-btn"
-                            th:onclick="window.open('https://github.com/chandan13tiwari/GEHU_Online_Project', '_blank')"
-                    >
-                        Live Demo
-                    </button>
+                    <a th:href="${project.onGithubClickAction}" th:target="_blank">
+                        <button class="btn btn-color-2 project-btn">
+                            Github
+                        </button>
+                    </a>
+                    <a th:href="${project.onLiveDemoClickAction}" th:target="_blank">
+                        <button class="btn btn-color-2 project-btn">
+                            Live Demo
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -467,6 +418,7 @@
             th:onclick="@{location.href='./#contact'}"
     />
 </section>
+
 <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>

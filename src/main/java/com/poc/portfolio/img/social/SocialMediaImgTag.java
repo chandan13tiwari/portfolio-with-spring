@@ -1,11 +1,11 @@
 package com.poc.portfolio.img.social;
 
+import com.poc.portfolio.img.ImgTagAttributes;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
-public class SocialMediaImgTag {
-    private String assetUrl;
-    private String altName;
+@SuperBuilder(toBuilder = true)
+public class SocialMediaImgTag extends ImgTagAttributes {
     private String onClickAction;
 }

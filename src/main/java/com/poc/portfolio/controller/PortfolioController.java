@@ -1,5 +1,6 @@
 package com.poc.portfolio.controller;
 
+import com.poc.portfolio.img.project.ProjectImgTag;
 import com.poc.portfolio.img.social.SocialMediaImgTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ByteArrayResource;
@@ -43,6 +44,18 @@ public class PortfolioController {
     private static final String LINKEDIN_URL = "https://www.linkedin.com/in/chandan-tiwari-uk/";
     private static final String GITHUB_URL = "https://github.com/chandan13tiwari";
     private static final String LEETCODE_URL = "https://leetcode.com/chantiwa/";
+    private static final String LIBRBARY_ASSET_URL = "/assets/librbary.png";
+    private static final String SECURE_FILE_UPLOAD_ASSET_URL = "/assets/secure-file-upload-project.jpeg";
+    private static final String GEHU_ONLINE_ASSET_URL = "/assets/gehu-online.png";
+    private static final String LIBRBARY = "Librbary";
+    private static final String SECURE_FILE_UPLOAD = "Secure File Upload";
+    private static final String GEHU_ONLINE = "GEHU Online";
+    private static final String LIBRBARY_GITHUB_URL = "https://github.com/librbary";
+    private static final String LIBRBARY_LIVE_DEMO_URL = "https://librbary.github.io/librbary-buy-feature/";
+    private static final String SECURE_FILE_UPLOAD_GITHUB_URL = "https://github.com/chandan13tiwari/secure-file-upload";
+    private static final String SECURE_FILE_UPLOAD_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/secure-file-upload";
+    private static final String GEHU_ONLINE_GITHUB_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
+    private static final String GEHU_ONLINE_LIVE_DEMO_URL = "https://github.com/chandan13tiwari/GEHU_Online_Project";
 
 
 
@@ -50,6 +63,8 @@ public class PortfolioController {
     public String home(Model model) {
         model.addAttribute("titles", getTitles());
         model.addAttribute("social", getSocialMediaImgTag());
+        model.addAttribute("projects", getProjectImgTag());
+
         return "index";
     }
 
@@ -77,6 +92,7 @@ public class PortfolioController {
 
     private static List<SocialMediaImgTag> getSocialMediaImgTag() {
         List<SocialMediaImgTag> imgTagList = new ArrayList<>();
+
         imgTagList.add(SocialMediaImgTag.builder()
                 .assetUrl(YOUTUBE_ASSET_URL).altName("My YouTube profile").onClickAction(YOUTUBE_URL).build());
         imgTagList.add(SocialMediaImgTag.builder()
@@ -85,6 +101,27 @@ public class PortfolioController {
                 .assetUrl(GITHUB_ASSET_URL).altName("My Github profile").onClickAction(GITHUB_URL).build());
         imgTagList.add(SocialMediaImgTag.builder()
                 .assetUrl(LEETCODE_ASSET_URL).altName("My Leetcode profile").onClickAction(LEETCODE_URL).build());
+
+        return imgTagList;
+    }
+
+    private static List<ProjectImgTag> getProjectImgTag() {
+        List<ProjectImgTag> imgTagList = new ArrayList<>();
+
+        imgTagList.add(ProjectImgTag.builder()
+                .assetUrl(LIBRBARY_ASSET_URL).altName(LIBRBARY).projectName(LIBRBARY)
+                .onGithubClickAction(LIBRBARY_GITHUB_URL)
+                .onLiveDemoClickAction(LIBRBARY_LIVE_DEMO_URL).build());
+
+        imgTagList.add(ProjectImgTag.builder()
+                .assetUrl(SECURE_FILE_UPLOAD_ASSET_URL).altName(SECURE_FILE_UPLOAD).projectName(SECURE_FILE_UPLOAD)
+                .onGithubClickAction(SECURE_FILE_UPLOAD_GITHUB_URL)
+                .onLiveDemoClickAction(SECURE_FILE_UPLOAD_LIVE_DEMO_URL).build());
+
+        imgTagList.add(ProjectImgTag.builder()
+                .assetUrl(GEHU_ONLINE_ASSET_URL).altName(GEHU_ONLINE).projectName(GEHU_ONLINE)
+                .onGithubClickAction(GEHU_ONLINE_GITHUB_URL)
+                .onLiveDemoClickAction(GEHU_ONLINE_LIVE_DEMO_URL).build());
 
         return imgTagList;
     }
