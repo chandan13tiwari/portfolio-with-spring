@@ -7,5 +7,5 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder(toBuilder = true)
 public class SocialMediaImgTag extends ImgTagAttributes {
-    private String onClickAction;
+  private String onClickAction;
 }

@@ -6,6 +6,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder(toBuilder = true)
 public abstract class ImgTagAttributes {
-    String assetUrl;
-    String altName;
+  private String assetUrl;
+  private String altName;
 }
