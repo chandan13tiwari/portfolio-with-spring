@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Project
+        run: mvn clean install
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: gh-pages/gh-pages@v4
+        with:
+          publish_dir: target/site
+          commit_message: Deploy to GitHub Pages
