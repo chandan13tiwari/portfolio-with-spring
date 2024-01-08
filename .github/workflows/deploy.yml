@@ -20,7 +20,8 @@ jobs:
           distribution: 'adopt'
 
       - name: Build Project
-        run: mvn clean install
+        run: mvn clean package
+
 
   deploy:
     name: Deploy
@@ -28,11 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
 
       - name: Deploy to GitHub Pages
-        uses: gh-pages/gh-pages@v4
-        with:
-          publish_dir: target/site
-          commit_message: Deploy to GitHub Pages
+        run: mvn clean package
+      - run: gh-pages deploy
