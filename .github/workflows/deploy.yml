@@ -23,7 +23,7 @@ jobs:
         run: mvn clean install
 
       - name: Deploy to GitHub Pages
-        uses: actions/github-pages@v3
+        uses: gh-pages/gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: target/site
