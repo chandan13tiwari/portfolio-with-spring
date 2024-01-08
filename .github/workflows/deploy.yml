@@ -22,12 +22,25 @@ jobs:
       - name: Build Project
         run: mvn clean install
 
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./target/classes
+
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./target/classes
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
