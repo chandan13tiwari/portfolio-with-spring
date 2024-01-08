@@ -20,7 +20,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build Project
-        run: mvn clean package
+        run: mvn clean install
 
 
   deploy:
