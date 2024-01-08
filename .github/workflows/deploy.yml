@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: production-files
-          path: ./target/classes/templates
+          path: ./target
 
   deploy:
     name: Deploy
@@ -38,10 +38,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: production-files
-          path: ./target/classes/templates
+          path: ./target
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/classes/templates
+          publish_dir: ./target
