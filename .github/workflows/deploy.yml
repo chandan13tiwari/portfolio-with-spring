@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy to GitHub Pages
-        uses: gh-pages/gh-pages@v4
+        uses: actions/github-pages@v4
         with:
           publish_dir: target/site
           commit_message: Deploy to GitHub Pages
