@@ -138,44 +138,13 @@
 <section id="clients">
     <p class="section__text__p1">Meet my</p>
     <h1 class="title">Clients</h1>
-
     <div class="client-wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
         <ul class="carousel">
-            <li class="card">
-                <div class="img"><img src="./assets/oracle-logo.png" alt="oracle-logo" draggable="false"></div>
-                <h2>Oracle</h2>
-                <span>SDE-2</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/mcq-logo.jpg" alt="mcq-logo" draggable="false"></div>
-                <h2>Macquarie</h2>
-                <span>Consultant</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/amex-logo.jpg" alt="amex-logo" draggable="false"></div>
-                <h2>American Express</h2>
-                <span>SDE-3</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/hsbc-logo.png" alt="hsbc-logo" draggable="false"></div>
-                <h2>HSBC</h2>
-                <span>SDE-3</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/ey-logo.png" alt="ey-logo" draggable="false"></div>
-                <h2>Ernst & Young</h2>
-                <span>Senior Consultant</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/capg-logo.jpg" alt="capg-logo" draggable="false"></div>
-                <h2>Capgemini</h2>
-                <span>Senior Analyst</span>
-            </li>
-            <li class="card">
-                <div class="img"><img src="./assets/infosys-logo.jpg" alt="infosys-logo" draggable="false"></div>
-                <h2>Infosys</h2>
-                <span>Consultant</span>
+            <li class="card" th:each="client : ${clients}">
+                <div class="img"><img th:src="@{${client.assetUrl}}" th:alt="${client.altName}" draggable="${client.draggable}"></div>
+                <h2 th:text="${client.clientName}">Client Name</h2>
+                <span th:text="${client.designation}">Designation</span>
             </li>
         </ul>
         <i id="right" class="fa-solid fa-angle-right"></i>
