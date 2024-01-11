@@ -297,6 +297,7 @@ a:hover {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
+  rotate: 180deg;
 }
 
 .details-container {
@@ -599,4 +600,22 @@ footer p {
   .client-wrapper .carousel {
     grid-auto-columns: 100%;
   }
+}
+
+/* Youtube Banner */
+
+#youtube {
+  position: relative;
+  padding-bottom: 10vh;
+  margin-top: 15vh;
+}
+
+.youtube-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 3vh;
+}
+
+.poc_banner {
+    width: 100%;
 }

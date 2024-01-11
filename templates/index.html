@@ -7,7 +7,8 @@
     <title>Chandan's Portfolio</title>
     <link rel="stylesheet" th:href="@{/styles/css/style.css}" />
     <link rel="stylesheet" th:href="@{/styles/css/mediaqueries.css}" />
-    <script src="./js/card.js" defer></script>
+    <script th:src="@{./js/card.js}" defer></script>
+    <script th:src="@{./js/youtube.js}" defer></script>
     <!-- Fontawesome Link for Icons -->
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css}">
 
@@ -21,7 +22,7 @@
             <li><a th:href="@{#clients}">Clients</a></li>
             <li><a th:href="@{#experience}">Experience</a></li>
             <li><a th:href="@{#projects}">Projects</a></li>
-            <li><a th:href="@{#contact}">Contact</a></li>
+            <li><a th:href="@{#youtube}">@proofofconceptcode</a></li>
         </ul>
     </div>
 </nav>
@@ -38,6 +39,7 @@
             <li><a th:href="@{#clients}" th:onclick="toggleMenu()">Clients</a></li>
             <li><a th:href="@{#experience}" th:onclick="toggleMenu()">Experience</a></li>
             <li><a th:href="@{#projects}" th:onclick="toggleMenu()">Projects</a></li>
+            <li><a th:href="@{#youtube}" th:onclick="toggleMenu()">@proofofconceptcode</a></li>
             <li><a th:href="@{#contact}" th:onclick="toggleMenu()">Contact</a></li>
         </div>
     </div>
@@ -131,7 +133,7 @@
             th:src="@{${arrow.assetUrl}}"
             th:alt="${arrow.altName}"
             class="icon arrow"
-            th:onclick="@{location.href='./#experience'}"
+            th:onclick="@{location.href='./#'}"
     />
 </section>
 
@@ -154,7 +156,7 @@
             th:src="@{${arrow.assetUrl}}"
             th:alt="${arrow.altName}"
             class="icon arrow"
-            th:onclick="@{location.href='./#contact'}"
+            th:onclick="@{location.href='./#'}"
     />
 </section>
 
@@ -166,70 +168,15 @@
             <div class="details-container">
                 <h2 class="experience-sub-title">Frontend Development</h2>
                 <div class="article-container">
-                    <article>
+                    <article th:each="exp : ${frontend}">
                         <img
                                 th:src="@{${checkmark}}"
                                 alt="Experience icon"
                                 class="icon"
                         />
                         <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>CSS</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>ReactJS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>JavaScript</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>TypeScript</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>AngularJS</h3>
-                            <p>Intermediate</p>
+                            <h3 th:text="${exp.technology}">Technology</h3>
+                            <p th:text="${exp.expLevel}">Experience</p>
                         </div>
                     </article>
                 </div>
@@ -237,48 +184,15 @@
             <div class="details-container">
                 <h2 class="experience-sub-title">Backend Development</h2>
                 <div class="article-container">
-                    <article>
+                    <article th:each="exp : ${backend}">
                         <img
                                 th:src="@{${checkmark}}"
                                 alt="Experience icon"
                                 class="icon"
                         />
                         <div>
-                            <h3>JAVA 8+</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Node JS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Express JS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Spring</h3>
-                            <p>Experienced</p>
+                            <h3 th:text="${exp.technology}">Technology</h3>
+                            <p th:text="${exp.expLevel}">Experience</p>
                         </div>
                     </article>
                 </div>
@@ -289,15 +203,15 @@
             <div class="details-container">
                 <h2 class="experience-sub-title">Cloud Technology</h2>
                 <div class="article-container">
-                    <article>
+                    <article th:each="exp : ${cloud}">
                         <img
                                 th:src="@{${checkmark}}"
                                 alt="Experience icon"
                                 class="icon"
                         />
                         <div>
-                            <h3>AWS</h3>
-                            <p>Experienced</p>
+                            <h3 th:text="${exp.technology}">Technology</h3>
+                            <p th:text="${exp.expLevel}">Experience</p>
                         </div>
                     </article>
                 </div>
@@ -308,37 +222,15 @@
             <div class="details-container">
                 <h2 class="experience-sub-title">Databases</h2>
                 <div class="article-container">
-                    <article>
+                    <article th:each="exp : ${database}">
                         <img
                                 th:src="@{${checkmark}}"
                                 alt="Experience icon"
                                 class="icon"
                         />
                         <div>
-                            <h3>PostgreSQL</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>OracleDB</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>MySQL</h3>
-                            <p>Experienced</p>
+                            <h3 th:text="${exp.technology}">Technology</h3>
+                            <p th:text="${exp.expLevel}">Experience</p>
                         </div>
                     </article>
                 </div>
@@ -346,59 +238,15 @@
             <div class="details-container">
                 <h2 class="experience-sub-title">DevOps</h2>
                 <div class="article-container">
-                    <article>
+                    <article  th:each="exp : ${devops}">
                         <img
                                 th:src="@{${checkmark}}"
                                 alt="Experience icon"
                                 class="icon"
                         />
                         <div>
-                            <h3>Docker</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Jenkins</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Kubernetes</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>ElasticSearch</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img
-                                th:src="@{${checkmark}}"
-                                alt="Experience icon"
-                                class="icon"
-                        />
-                        <div>
-                            <h3>Splunk</h3>
-                            <p>Experienced</p>
+                            <h3 th:text="${exp.technology}">Technology</h3>
+                            <p th:text="${exp.expLevel}">Experience</p>
                         </div>
                     </article>
                 </div>
@@ -409,7 +257,7 @@
             th:src="@{${arrow.assetUrl}}"
             th:alt="${arrow.altName}"
             class="icon arrow"
-            th:onclick="@{location.href='./#projects'}"
+            th:onclick="@{location.href='./#'}"
     />
 </section>
 
@@ -446,7 +294,25 @@
             th:src="@{${arrow.assetUrl}}"
             th:alt="${arrow.altName}"
             class="icon arrow"
-            th:onclick="@{location.href='./#contact'}"
+            th:onclick="@{location.href='./#'}"
+    />
+</section>
+
+<section id="youtube">
+    <p class="section__text__p1">Learn in public</p>
+    <h1 class="title"><a th:href="@{https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA}" th:target="_blank">@proofofconceptcode</a></h1>
+    <div class="youtube-wrapper">
+        <div class="details-container">
+            <a th:href="@{https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA}" th:target="_blank">
+                <img class="poc_banner" th:src="@{./assets/poc-banner.png}" />
+            </a>
+        </div>
+    </div>
+    <img
+            th:src="@{${arrow.assetUrl}}"
+            th:alt="${arrow.altName}"
+            class="icon arrow"
+            th:onclick="@{location.href='./#'}"
     />
 </section>
 
@@ -480,6 +346,7 @@
                 <li><a th:href="@{#clients}">Clients</a></li>
                 <li><a th:href="@{#experience}">Experience</a></li>
                 <li><a th:href="@{#projects}">Projects</a></li>
+                <li><a th:href="@{#youtube}">@proofofconceptcode</a></li>
                 <li><a th:href="@{#contact}">Contact</a></li>
             </ul>
         </div>
