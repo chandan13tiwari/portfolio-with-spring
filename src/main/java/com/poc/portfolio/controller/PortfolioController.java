@@ -101,20 +101,20 @@ public class PortfolioController {
   private static List<ClientImgTag> getClientImgTagAttributes() {
     List<ClientImgTag> imgTagList = new ArrayList<>();
 
-    imgTagList.add(ClientImgTag.builder().assetUrl(ORACLE_LOGO_URL).altName("oracle-logo")
-            .clientName("Oracle").designation("SDE-2").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo")
-            .clientName("Macquarie").designation("Consultant").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(ORACLE_LOGO_URL).altName("oracle-logo").clientName("Oracle")
+        .designation("SDE-2").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo").clientName("Macquarie")
+        .designation("Consultant").draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(AMEX_LOGO_URL).altName("amex-logo")
-            .clientName("American Express").designation("SDE-3").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo")
-            .clientName("Ernst & Young LLP").designation("Senior Consultant").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo")
-            .clientName("HSBC").designation("SDE-3").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo")
-            .clientName("Capgemini").designation("Senior Analyst").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo")
-            .clientName("Infosys").designation("Consultant").draggable(false).build());
+        .clientName("American Express").designation("SDE-3").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo").clientName("Ernst & Young LLP")
+        .designation("Senior Consultant").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo").clientName("HSBC")
+        .designation("SDE-3").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo").clientName("Capgemini")
+        .designation("Senior Analyst").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo").clientName("Infosys")
+        .designation("Consultant").draggable(false).build());
 
     return imgTagList;
   }
