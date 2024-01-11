@@ -1,6 +1,7 @@
 package com.poc.portfolio.controller;
 
 import com.poc.portfolio.img.arrow.ArrowImgTag;
+import com.poc.portfolio.img.client.ClientImgTag;
 import com.poc.portfolio.img.project.ProjectImgTag;
 import com.poc.portfolio.img.social.SocialMediaImgTag;
 import org.springframework.core.io.ByteArrayResource;
@@ -36,6 +37,7 @@ public class PortfolioController {
     model.addAttribute("education", EDUCATION_ASSET_URL);
     model.addAttribute("arrow", getArrowImgTagAttributes());
     model.addAttribute("checkmark", CHECKMARK_ASSET_URL);
+    model.addAttribute("clients", getClientImgTagAttributes());
 
     return "index";
   }
@@ -94,6 +96,27 @@ public class PortfolioController {
 
   private static ArrowImgTag getArrowImgTagAttributes() {
     return ArrowImgTag.builder().assetUrl(ARROW_ASSET_URL).altName("Arrow icon").build();
+  }
+
+  private static List<ClientImgTag> getClientImgTagAttributes() {
+    List<ClientImgTag> imgTagList = new ArrayList<>();
+
+    imgTagList.add(ClientImgTag.builder().assetUrl(ORACLE_LOGO_URL).altName("oracle-logo")
+            .clientName("Oracle").designation("SDE-2").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo")
+            .clientName("Macquarie").designation("Consultant").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(AMEX_LOGO_URL).altName("amex-logo")
+            .clientName("American Express").designation("SDE-3").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo")
+            .clientName("Ernst & Young LLP").designation("Senior Consultant").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo")
+            .clientName("HSBC").designation("SDE-3").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo")
+            .clientName("Capgemini").designation("Senior Analyst").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo")
+            .clientName("Infosys").designation("Consultant").draggable(false).build());
+
+    return imgTagList;
   }
 
 }

@@ -30,4 +30,11 @@ public final class Constants {
   public static final String EDUCATION_ASSET_URL = "/assets/education.png";
   public static final String ARROW_ASSET_URL = "/assets/arrow.png";
   public static final String CHECKMARK_ASSET_URL = "/assets/checkmark.png";
+  public static final String ORACLE_LOGO_URL = "/assets/oracle-logo.png";
+  public static final String MACQUARIE_LOGO_URL = "/assets/mcq-logo.jpg";
+  public static final String AMEX_LOGO_URL = "/assets/amex-logo.jpg";
+  public static final String EY_LOGO_URL = "/assets/ey-logo.png";
+  public static final String HSBC_LOGO_URL = "/assets/hsbc-logo.png";
+  public static final String CAPGEMINI_LOGO_URL = "/assets/capg-logo.jpg";
+  public static final String INFOSYS_LOGO_URL = "/assets/infosys-logo.jpg";
 }
