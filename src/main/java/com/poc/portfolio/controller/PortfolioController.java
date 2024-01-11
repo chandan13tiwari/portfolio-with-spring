@@ -1,5 +1,6 @@
 package com.poc.portfolio.controller;
 
+import com.poc.portfolio.experience.TechExperience;
 import com.poc.portfolio.img.arrow.ArrowImgTag;
 import com.poc.portfolio.img.client.ClientImgTag;
 import com.poc.portfolio.img.project.ProjectImgTag;
@@ -38,6 +39,11 @@ public class PortfolioController {
     model.addAttribute("arrow", getArrowImgTagAttributes());
     model.addAttribute("checkmark", CHECKMARK_ASSET_URL);
     model.addAttribute("clients", getClientImgTagAttributes());
+    model.addAttribute("frontend", getFrontendDevelopmentExperience());
+    model.addAttribute("backend", getBackendDevelopmentExperience());
+    model.addAttribute("cloud", getCloudExperience());
+    model.addAttribute("database", getDatabaseExperience());
+    model.addAttribute("devops", getDevOpsExperience());
 
     return "index";
   }
@@ -115,6 +121,60 @@ public class PortfolioController {
         .designation("Senior Analyst").draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo").clientName("Infosys")
         .designation("Consultant").draggable(false).build());
+
+    return imgTagList;
+  }
+
+  private static List<TechExperience> getFrontendDevelopmentExperience() {
+    List<TechExperience> imgTagList = new ArrayList<>();
+
+    imgTagList.add(TechExperience.builder().technology("HTML").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("CSS").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("ReactJS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology("JavaScript").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("TypeScript").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology("AngularJS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+
+    return imgTagList;
+  }
+
+  private static List<TechExperience> getBackendDevelopmentExperience() {
+    List<TechExperience> imgTagList = new ArrayList<>();
+
+    imgTagList.add(TechExperience.builder().technology("JAVA 8+").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("Node JS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology("Express JS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology("Spring").expLevel(EXP_LEVEL_EXPERIENCED).build());
+
+    return imgTagList;
+  }
+
+  private static List<TechExperience> getCloudExperience() {
+    List<TechExperience> imgTagList = new ArrayList<>();
+
+    imgTagList.add(TechExperience.builder().technology("AWS").expLevel(EXP_LEVEL_EXPERIENCED).build());
+
+    return imgTagList;
+  }
+
+  private static List<TechExperience> getDatabaseExperience() {
+    List<TechExperience> imgTagList = new ArrayList<>();
+
+    imgTagList.add(TechExperience.builder().technology("PostgreSQL").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("OracleDB").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("MySQL").expLevel(EXP_LEVEL_EXPERIENCED).build());
+
+    return imgTagList;
+  }
+
+  private static List<TechExperience> getDevOpsExperience() {
+    List<TechExperience> imgTagList = new ArrayList<>();
+
+    imgTagList.add(TechExperience.builder().technology("Docker").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("Jenkins").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("Kubernetes").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology("ElasticSearch").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology("Splunk").expLevel(EXP_LEVEL_EXPERIENCED).build());
 
     return imgTagList;
   }
