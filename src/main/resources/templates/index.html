@@ -46,11 +46,11 @@
 </nav>
 <section id="profile">
     <div class="section__pic-container">
-        <img th:src="@{${profilepic}}" alt="Chandan Tiwari" />
+        <img th:src="@{${profilepic}}" th:alt="${myName}" />
     </div>
     <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Chandan Tiwari</h1>
+        <h1 class="title" th:text="${myName}">name</h1>
 
         <div class="animated-text">
             <ul class="sec-texts">
@@ -88,7 +88,7 @@
         <div class="section__pic-container">
             <img
                     th:src="@{${aboutpic}}"
-                    alt="Chandan Tiwari"
+                    th:alt="${myName}"
                     class="about-pic"
             />
         </div>
@@ -101,11 +101,11 @@
                             class="icon"
                     />
                     <h3>Experience</h3>
-                    <p>5+ years <br />Software Development <em> (2019 - till date)</em></p>
+                    <p><span th:text="${myExpInYear}">exp</span>+ years <br />Software Development <em> (2019 - till date)</em></p>
                 </div>
                 <div class="details-container">
                     <img
-                            th:src="@{/assets/education.png}"
+                            th:src="@{${education}}"
                             alt="Education icon"
                             class="icon"
                     />
@@ -116,7 +116,7 @@
             <div class="text-container">
                 <p>
                     Hey there! I'm from Uttarakhand (India), also known as "Land of the Gods".
-                    I've more than 5 years of professional experience in IT sector and developing
+                    I've more than <span th:text="${myExpInYear}">exp</span> years of professional experience in IT sector and developing
                     Softwares for different multi national clients. A Big fan of JAVA!
                 </p>
                 <p>
@@ -300,11 +300,11 @@
 
 <section id="youtube">
     <p class="section__text__p1">Learn in public</p>
-    <h1 class="title"><a th:href="@{https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA}" th:target="_blank">@proofofconceptcode</a></h1>
+    <h1 class="title"><a th:href="@{${youtube}}" th:target="_blank">@proofofconceptcode</a></h1>
     <div class="youtube-wrapper">
         <div class="details-container">
-            <a th:href="@{https://www.youtube.com/channel/UCUCTbkGwNK5tUut7wJKqbaA}" th:target="_blank">
-                <img class="poc_banner" th:src="@{./assets/poc-banner.png}" />
+            <a th:href="@{${youtube}}" th:target="_blank">
+                <img class="poc_banner" th:src="@{${banner}}" />
             </a>
         </div>
     </div>
@@ -322,11 +322,11 @@
     <div class="contact-info-upper-container">
         <div class="contact-info-container">
             <img
-                    th:src="@{/assets/email.png}"
+                    th:src="@{${email}}"
                     alt="Email icon"
                     class="icon contact-icon email-icon"
             />
-            <p><a th:href="@{mailto:chandan.tiwaris@outlook.com}" th:target="_blank">chandan.tiwaris@outlook.com</a></p>
+            <p><a th:href="@{${mailtoemail}}" th:target="_blank" th:text="${myEmail}">email</a></p>
         </div>
         <div class="contact-info-container">
             <img
@@ -334,7 +334,7 @@
                     alt="LinkedIn icon"
                     class="icon contact-icon"
             />
-            <p><a th:href="@{https://www.linkedin.com/in/chandan-tiwari-uk/}" th:target="_blank">LinkedIn</a></p>
+            <p><a th:href="@{${linkedin}}" th:target="_blank">LinkedIn</a></p>
         </div>
     </div>
 </section>

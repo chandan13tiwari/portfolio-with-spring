@@ -5,6 +5,7 @@ public final class Constants {
   public static final String RESUME_FILE_PATH = "src/main/resources/static/file/chandan-resume.pdf";
   public static final String RESUME_MEDIA_TYPE = "application/pdf";
   public static final String YOUTUBE_ASSET_URL = "/assets/youtube.png";
+  public static final String EMAIL_ASSET_URL = "/assets/email.png";
   public static final String LINKEDIN_ASSET_URL = "/assets/linkedin.png";
   public static final String GITHUB_ASSET_URL = "/assets/github.png";
   public static final String LEETCODE_ASSET_URL = "/assets/leetcode.png";
@@ -40,4 +41,9 @@ public final class Constants {
   public static final String EXP_LEVEL_BEGINNER = "Beginner";
   public static final String EXP_LEVEL_INTERMEDIATE = "Intermediate";
   public static final String EXP_LEVEL_EXPERIENCED = "Experienced";
+  public static final String POC_BANNER_URL = "/assets/poc-banner.png";
+  public static final String MY_NAME = "Chandan Tiwari";
+  public static final int MY_EXPERIENCE_IN_YEARS = 4;
+  public static final String MY_EMAIL_ID = "chandan.tiwaris@outlook.com";
+  public static final String MAIL_TO_EMAIL = "mailto:" + MY_EMAIL_ID;
 }
