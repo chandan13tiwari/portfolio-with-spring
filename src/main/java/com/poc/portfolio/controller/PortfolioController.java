@@ -1,5 +1,6 @@
 package com.poc.portfolio.controller;
 
+import com.poc.portfolio.enums.*;
 import com.poc.portfolio.experience.TechExperience;
 import com.poc.portfolio.img.arrow.ArrowImgTag;
 import com.poc.portfolio.img.client.ClientImgTag;
@@ -22,6 +23,14 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.poc.portfolio.enums.BackendTech.*;
+import static com.poc.portfolio.enums.Clients.*;
+import static com.poc.portfolio.enums.CloudTech.AWS;
+import static com.poc.portfolio.enums.DatabaseTech.*;
+import static com.poc.portfolio.enums.Designations.*;
+import static com.poc.portfolio.enums.DevOpsTech.*;
+import static com.poc.portfolio.enums.FrontendTech.*;
+import static com.poc.portfolio.enums.Titles.*;
 import static com.poc.portfolio.utils.Constants.*;
 
 @Controller
@@ -70,9 +79,9 @@ public class PortfolioController {
 
   private static List<String> getTitles() {
     List<String> listOfTitles = new ArrayList<>();
-    listOfTitles.add("Software Development Engineer");
-    listOfTitles.add("Content Creator");
-    listOfTitles.add("Music Producer");
+    listOfTitles.add(SOFTWARE_DEVELOPMENT_ENGINEER.getValue());
+    listOfTitles.add(CONTENT_CREATOR.getValue());
+    listOfTitles.add(MUSIC_PRODUCER.getValue());
 
     return listOfTitles;
   }
@@ -116,20 +125,20 @@ public class PortfolioController {
   private static List<ClientImgTag> getClientImgTagAttributes() {
     List<ClientImgTag> imgTagList = new ArrayList<>();
 
-    imgTagList.add(ClientImgTag.builder().assetUrl(ORACLE_LOGO_URL).altName("oracle-logo").clientName("Oracle")
-        .designation("SDE-2").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo").clientName("Macquarie")
-        .designation("Consultant").draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(ORACLE_LOGO_URL).altName("oracle-logo")
+            .clientName(ORACLE.getValue()).designation(SDE_2.getValue()).draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo")
+            .clientName(MCQ.getValue()).designation(CONSULTANT.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(AMEX_LOGO_URL).altName("amex-logo")
-        .clientName("American Express").designation("SDE-3").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo").clientName("Ernst & Young LLP")
-        .designation("Senior Consultant").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo").clientName("HSBC")
-        .designation("SDE-3").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo").clientName("Capgemini")
-        .designation("Senior Analyst").draggable(false).build());
-    imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo").clientName("Infosys")
-        .designation("Consultant").draggable(false).build());
+        .clientName(AMEX.getValue()).designation(SDE_3.getValue()).draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo")
+            .clientName(EY.getValue()).designation(SENIOR_CONSULTANT.getValue()).draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo")
+            .clientName(HSBC.getValue()).designation(SDE_3.getValue()).draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo")
+            .clientName(CAPG.getValue()).designation(SENIOR_ANALYST.getValue()).draggable(false).build());
+    imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo")
+            .clientName(INFOSYS.getValue()).designation(CONSULTANT.getValue()).draggable(false).build());
 
     return imgTagList;
   }
@@ -137,12 +146,12 @@ public class PortfolioController {
   private static List<TechExperience> getFrontendDevelopmentExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology("HTML").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("CSS").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("ReactJS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
-    imgTagList.add(TechExperience.builder().technology("JavaScript").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("TypeScript").expLevel(EXP_LEVEL_INTERMEDIATE).build());
-    imgTagList.add(TechExperience.builder().technology("AngularJS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(HTML.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(CSS.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(REACT.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(JS.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(TYPESCRIPT.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(ANGULAR.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
 
     return imgTagList;
   }
@@ -150,10 +159,10 @@ public class PortfolioController {
   private static List<TechExperience> getBackendDevelopmentExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology("JAVA 8+").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("Node JS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
-    imgTagList.add(TechExperience.builder().technology("Express JS").expLevel(EXP_LEVEL_INTERMEDIATE).build());
-    imgTagList.add(TechExperience.builder().technology("Spring").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(JAVA.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(NODE.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(EXPRESS.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(SPRING.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
 
     return imgTagList;
   }
@@ -161,7 +170,7 @@ public class PortfolioController {
   private static List<TechExperience> getCloudExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology("AWS").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(AWS.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
 
     return imgTagList;
   }
@@ -169,9 +178,9 @@ public class PortfolioController {
   private static List<TechExperience> getDatabaseExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology("PostgreSQL").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("OracleDB").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("MySQL").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(POSTGRESQL.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(ORACLEDB.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(MYSQL.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
 
     return imgTagList;
   }
@@ -179,11 +188,11 @@ public class PortfolioController {
   private static List<TechExperience> getDevOpsExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology("Docker").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("Jenkins").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("Kubernetes").expLevel(EXP_LEVEL_INTERMEDIATE).build());
-    imgTagList.add(TechExperience.builder().technology("ElasticSearch").expLevel(EXP_LEVEL_EXPERIENCED).build());
-    imgTagList.add(TechExperience.builder().technology("Splunk").expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(DOCKER.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(JENKINS.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(KUBERNETES.getValue()).expLevel(EXP_LEVEL_INTERMEDIATE).build());
+    imgTagList.add(TechExperience.builder().technology(ELASTICSEARCH.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
+    imgTagList.add(TechExperience.builder().technology(SPLUNK.getValue()).expLevel(EXP_LEVEL_EXPERIENCED).build());
 
     return imgTagList;
   }
