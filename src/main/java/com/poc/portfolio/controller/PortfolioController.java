@@ -130,11 +130,11 @@ public class PortfolioController {
     imgTagList.add(ClientImgTag.builder().assetUrl(MACQUARIE_LOGO_URL).altName("mcq-logo")
         .clientName(MCQ.getValue()).designation(CONSULTANT.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(AMEX_LOGO_URL).altName("amex-logo").clientName(AMEX.getValue())
-        .designation(SDE_3.getValue()).draggable(false).build());
+        .designation(SDE_1.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(EY_LOGO_URL).altName("ey-logo").clientName(EY.getValue())
         .designation(SENIOR_CONSULTANT.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(HSBC_LOGO_URL).altName("hsbc-logo").clientName(HSBC.getValue())
-        .designation(SDE_3.getValue()).draggable(false).build());
+        .designation(SDE_1.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(CAPGEMINI_LOGO_URL).altName("capg-logo")
         .clientName(CAPG.getValue()).designation(SENIOR_ANALYST.getValue()).draggable(false).build());
     imgTagList.add(ClientImgTag.builder().assetUrl(INFOSYS_LOGO_URL).altName("infy-logo")
