@@ -38,9 +38,6 @@ public final class Constants {
   public static final String HSBC_LOGO_URL = "/assets/hsbc-logo.png";
   public static final String CAPGEMINI_LOGO_URL = "/assets/capg-logo.jpg";
   public static final String INFOSYS_LOGO_URL = "/assets/infosys-logo.jpg";
-  public static final String EXP_LEVEL_BEGINNER = "Beginner";
-  public static final String EXP_LEVEL_INTERMEDIATE = "Intermediate";
-  public static final String EXP_LEVEL_EXPERIENCED = "Experienced";
   public static final String POC_BANNER_URL = "/assets/poc-banner.png";
   public static final String MY_NAME = "Chandan Tiwari";
   public static final int MY_EXPERIENCE_IN_YEARS = 4;
