@@ -31,8 +31,14 @@ Portfolio Link - https://portfolio-with-spring-production.up.railway.app/
 ###### If you want to add a new client
 
 1. In _PortfolioController.java_, you need to add a new client in 'clients' modelAttribute
-2. Store the client logo under _src/main/resources/static/assets/_ with the proper name formatted as _<client_name>-logo
+2. Store the client logo under _src/main/resources/static/assets/_ with the proper name formatted as _<client_name>-logo_
 3. You can use any of these extension for images - png or jpg
 4. Make sure the dimensions of the image should be 400X400
 
 ###### If you want to add a new experience
+
+1. We have created different sections for different tech-stack, like frontend, backend, devops, etc. Please add the 
+experience under the correct section
+2. In _PortfolioController.java_, you need to add the experience accordingly under the following modelAttributes - _frontend, backend, cloud, database, devops_
+3. If you want to add a new Tech-stack, then you need to update the structure of the web page a bit, then you can refer _index.html_
+4. If you want to add a new Experience level, then you add it in _ExperienceLevel.java_
