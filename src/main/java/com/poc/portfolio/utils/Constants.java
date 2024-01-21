@@ -2,7 +2,7 @@ package com.poc.portfolio.utils;
 
 public final class Constants {
   public static final String RESUME_FILENAME = "chandan-resume.pdf";
-  public static final String RESUME_FILE_PATH = "src/main/resources/static/file/chandan-resume.pdf";
+  public static final String RESUME_FILE_PATH = "src/main/resources/static/file/" + RESUME_FILENAME;
   public static final String RESUME_MEDIA_TYPE = "application/pdf";
   public static final String YOUTUBE_ASSET_URL = "/assets/youtube.png";
   public static final String EMAIL_ASSET_URL = "/assets/email.png";
