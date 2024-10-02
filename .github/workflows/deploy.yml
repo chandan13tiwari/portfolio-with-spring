@@ -45,6 +45,6 @@ jobs:
 
       - name: Clean up
         run: |
-          git checkout main
+          git checkout master
           git branch -D gh-pages
 
