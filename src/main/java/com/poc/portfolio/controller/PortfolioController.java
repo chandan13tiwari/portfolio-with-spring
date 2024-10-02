@@ -26,12 +26,9 @@ import java.util.List;
 
 import static com.poc.portfolio.enums.BackendTech.*;
 import static com.poc.portfolio.enums.Clients.*;
-import static com.poc.portfolio.enums.CloudTech.AWS;
 import static com.poc.portfolio.enums.DatabaseTech.*;
 import static com.poc.portfolio.enums.Designations.*;
 import static com.poc.portfolio.enums.DevOpsTech.*;
-import static com.poc.portfolio.enums.ExperienceLevel.EXPERIENCED;
-import static com.poc.portfolio.enums.ExperienceLevel.INTERMEDIATE;
 import static com.poc.portfolio.enums.FrontendTech.*;
 import static com.poc.portfolio.enums.Titles.*;
 import static com.poc.portfolio.utils.Constants.*;
@@ -108,7 +105,6 @@ public class PortfolioController {
   private static List<ProjectImgTag> getProjectImgTagAttributes() {
     List<ProjectImgTag> imgTagList = new ArrayList<>();
 
-
     imgTagList.add(ProjectImgTag.builder().assetUrl(LIBRBARY_ASSET_URL).altName(LIBRBARY).projectName(LIBRBARY)
         .onGithubClickAction(LIBRBARY_GITHUB_URL).onLiveDemoClickAction(LIBRBARY_LIVE_DEMO_URL).build());
 
@@ -152,7 +148,8 @@ public class PortfolioController {
     List<TechExperience> imgTagList = new ArrayList<>();
 
     Arrays.stream(FrontendTech.values()).forEach(tech -> {
-      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel())
+          .build());
     });
 
     return imgTagList;
@@ -162,7 +159,8 @@ public class PortfolioController {
     List<TechExperience> imgTagList = new ArrayList<>();
 
     Arrays.stream(BackendTech.values()).forEach(tech -> {
-      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel())
+          .build());
     });
 
     return imgTagList;
@@ -172,7 +170,8 @@ public class PortfolioController {
     List<TechExperience> imgTagList = new ArrayList<>();
 
     Arrays.stream(CloudTech.values()).forEach(tech -> {
-      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel())
+          .build());
     });
 
     return imgTagList;
@@ -182,8 +181,8 @@ public class PortfolioController {
     List<TechExperience> imgTagList = new ArrayList<>();
 
     Arrays.stream(DatabaseTech.values()).forEach(tech -> {
-      imgTagList.add(
-              TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel())
+          .build());
     });
 
     return imgTagList;
@@ -193,7 +192,8 @@ public class PortfolioController {
     List<TechExperience> imgTagList = new ArrayList<>();
 
     Arrays.stream(DevOpsTech.values()).forEach(tech -> {
-      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel())
+          .build());
     });
 
     return imgTagList;

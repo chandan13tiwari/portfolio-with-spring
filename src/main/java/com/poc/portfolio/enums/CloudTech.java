@@ -4,9 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum CloudTech {
-  AWS("AWS", ExperienceLevel.PROFESSIONAL.name()),
-  GCP("GCP", ExperienceLevel.BEGINNER.name()),
-  OCI("OCI", ExperienceLevel.EXPERIENCED.name());
+  AWS("AWS", ExperienceLevel.PROFESSIONAL.name()), GCP("GCP", ExperienceLevel.BEGINNER.name()), OCI("OCI",
+      ExperienceLevel.EXPERIENCED.name());
 
   private final String technology;
   private final String experienceLevel;
@@ -15,6 +14,5 @@ public enum CloudTech {
     this.technology = technology;
     this.experienceLevel = experienceLevel;
   }
-
 
 }

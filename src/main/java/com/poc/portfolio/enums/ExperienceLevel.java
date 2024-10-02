@@ -4,10 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ExperienceLevel {
-  BEGINNER("Beginner"),
-  INTERMEDIATE("Intermediate"),
-  EXPERIENCED("Experienced"),
-  PROFESSIONAL("Professional");
+  BEGINNER("Beginner"), INTERMEDIATE("Intermediate"), EXPERIENCED("Experienced"), PROFESSIONAL("Professional");
 
   private final String value;
 
