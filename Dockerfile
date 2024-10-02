@@ -12,6 +12,7 @@ COPY . .
 RUN mvn clean install
 
 RUN cd target/
+RUN chmod -x *.jar
 COPY *.jar .
 
 ENTRYPOINT [ "java", "-jar", "portfolio-with-spring-0.0.1-SNAPSHOT.jar" ]
