@@ -36,7 +36,7 @@ jobs:
           # If you have a specific directory for Thymeleaf templates,
           # adjust the command accordingly
           cp -r target/classes/static/* static/
-          cp -r target/classes/templates/* static/
+          cp -r target/classes/templates/index.html static/
 
       - name: Commit and push to gh-pages
         run: |
