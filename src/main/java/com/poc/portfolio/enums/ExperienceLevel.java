@@ -1,7 +1,13 @@
 package com.poc.portfolio.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum ExperienceLevel {
-  BEGINNER("Beginner"), INTERMEDIATE("Intermediate"), EXPERIENCED("Experienced");
+  BEGINNER("Beginner"),
+  INTERMEDIATE("Intermediate"),
+  EXPERIENCED("Experienced"),
+  PROFESSIONAL("Professional");
 
   private final String value;
 
@@ -9,7 +15,4 @@ public enum ExperienceLevel {
     this.value = value;
   }
 
-  public String getValue() {
-    return value;
-  }
 }

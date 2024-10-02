@@ -1,48 +1,48 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - main  # or the branch you want to deploy from
+
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Check out the repository
+        uses: actions/checkout@v2
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          java-version: '17'
-          distribution: 'adopt'
+          java-version: '11'
 
-      - name: Build Project
-        run: mvn clean install
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-files
-          path: ./target/classes
+      - name: Create gh-pages branch
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git checkout --orphan gh-pages
+          git rm -rf .
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Copy static files
+        run: |
+          cp -r target/*.jar static/
+          # If you have a specific directory for Thymeleaf templates,
+          # adjust the command accordingly
+          cp -r target/classes/static/* static/
 
-    steps:
+      - name: Commit and push to gh-pages
+        run: |
+          git add static/*
+          git commit -m "Deploy to GitHub Pages"
+          git push --force --set-upstream origin gh-pages
 
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./target/classes
-          
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/classes
+      - name: Clean up
+        run: |
+          git checkout main
+          git branch -D gh-pages
+

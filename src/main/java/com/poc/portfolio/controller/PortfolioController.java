@@ -21,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.poc.portfolio.enums.BackendTech.*;
@@ -81,9 +82,10 @@ public class PortfolioController {
 
   private static List<String> getTitles() {
     List<String> listOfTitles = new ArrayList<>();
-    listOfTitles.add(SOFTWARE_DEVELOPMENT_ENGINEER.getValue());
-    listOfTitles.add(CONTENT_CREATOR.getValue());
-    listOfTitles.add(MUSIC_PRODUCER.getValue());
+
+    Arrays.stream(Titles.values()).forEach(title -> {
+      listOfTitles.add(title.getValue());
+    });
 
     return listOfTitles;
   }
@@ -105,6 +107,7 @@ public class PortfolioController {
 
   private static List<ProjectImgTag> getProjectImgTagAttributes() {
     List<ProjectImgTag> imgTagList = new ArrayList<>();
+
 
     imgTagList.add(ProjectImgTag.builder().assetUrl(LIBRBARY_ASSET_URL).altName(LIBRBARY).projectName(LIBRBARY)
         .onGithubClickAction(LIBRBARY_GITHUB_URL).onLiveDemoClickAction(LIBRBARY_LIVE_DEMO_URL).build());
@@ -148,14 +151,9 @@ public class PortfolioController {
   private static List<TechExperience> getFrontendDevelopmentExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology(HTML.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(CSS.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(REACT.getValue()).expLevel(INTERMEDIATE.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(JS.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(
-        TechExperience.builder().technology(TYPESCRIPT.getValue()).expLevel(INTERMEDIATE.getValue()).build());
-    imgTagList
-        .add(TechExperience.builder().technology(ANGULAR.getValue()).expLevel(INTERMEDIATE.getValue()).build());
+    Arrays.stream(FrontendTech.values()).forEach(tech -> {
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+    });
 
     return imgTagList;
   }
@@ -163,11 +161,9 @@ public class PortfolioController {
   private static List<TechExperience> getBackendDevelopmentExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology(JAVA.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(NODE.getValue()).expLevel(INTERMEDIATE.getValue()).build());
-    imgTagList
-        .add(TechExperience.builder().technology(EXPRESS.getValue()).expLevel(INTERMEDIATE.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(SPRING.getValue()).expLevel(EXPERIENCED.getValue()).build());
+    Arrays.stream(BackendTech.values()).forEach(tech -> {
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+    });
 
     return imgTagList;
   }
@@ -175,7 +171,9 @@ public class PortfolioController {
   private static List<TechExperience> getCloudExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology(AWS.getValue()).expLevel(EXPERIENCED.getValue()).build());
+    Arrays.stream(CloudTech.values()).forEach(tech -> {
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+    });
 
     return imgTagList;
   }
@@ -183,11 +181,10 @@ public class PortfolioController {
   private static List<TechExperience> getDatabaseExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(
-        TechExperience.builder().technology(POSTGRESQL.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList
-        .add(TechExperience.builder().technology(ORACLEDB.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(MYSQL.getValue()).expLevel(EXPERIENCED.getValue()).build());
+    Arrays.stream(DatabaseTech.values()).forEach(tech -> {
+      imgTagList.add(
+              TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+    });
 
     return imgTagList;
   }
@@ -195,14 +192,9 @@ public class PortfolioController {
   private static List<TechExperience> getDevOpsExperience() {
     List<TechExperience> imgTagList = new ArrayList<>();
 
-    imgTagList.add(TechExperience.builder().technology(DOCKER.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList
-        .add(TechExperience.builder().technology(JENKINS.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(
-        TechExperience.builder().technology(KUBERNETES.getValue()).expLevel(INTERMEDIATE.getValue()).build());
-    imgTagList.add(
-        TechExperience.builder().technology(ELASTICSEARCH.getValue()).expLevel(EXPERIENCED.getValue()).build());
-    imgTagList.add(TechExperience.builder().technology(SPLUNK.getValue()).expLevel(EXPERIENCED.getValue()).build());
+    Arrays.stream(DevOpsTech.values()).forEach(tech -> {
+      imgTagList.add(TechExperience.builder().technology(tech.getTechnology()).expLevel(tech.getExperienceLevel()).build());
+    });
 
     return imgTagList;
   }
