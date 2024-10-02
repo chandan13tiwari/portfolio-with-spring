@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt install -y openjdk-17-jdk
 RUN apt install -y maven
 
