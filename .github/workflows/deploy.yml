@@ -31,6 +31,7 @@ jobs:
 
       - name: Copy static files
         run: |
+          mkdir static
           cp -r target/*.jar static/
           # If you have a specific directory for Thymeleaf templates,
           # adjust the command accordingly
