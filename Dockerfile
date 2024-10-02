@@ -11,7 +11,6 @@ WORKDIR portfolio-with-spring/
 COPY . .
 RUN mvn clean install
 
-RUN cd target/ && ls
-COPY *.jar .
+RUN cd target/ && cp portfolio-with-spring-0.0.1-SNAPSHOT.jar /portfolio-with-spring
 
 ENTRYPOINT [ "java", "-jar", "portfolio-with-spring-0.0.1-SNAPSHOT.jar" ]
